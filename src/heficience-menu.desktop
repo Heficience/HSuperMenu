@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=HSuperMenu
+Comment=Installation des outils d'Heficience.
+Exec=hsupermenu
+Icon=Heficience_Icone
+Categories=Utility;

@@ -1,0 +1,11 @@
+ 
+<RCC>
+    <qresource prefix="/">
+        <file>../Images/Heficience_Icone.svg</file>
+        <file>../Images/Heficience_Icone.ico</file>
+        <file>../Images/Heficience_Icone.icns</file>
+        <file>../Images/splash.png</file>
+        <file>../Images/heficience-menu.svg</file>
+        <file>../src/heficience-menu.desktop</file>
+    </qresource>
+</RCC>
