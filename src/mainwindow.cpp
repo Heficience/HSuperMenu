@@ -90,7 +90,7 @@ void MainWindow::on_InstallationAutocompletion_clicked()
 {
     ui->InstallationAutocompletion->setEnabled(false);
     ui->InstallationAutocompletion->setStyleSheet("background-color: #aaa");
-    cmdScript = "konsole --nofork -e sudo bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/install_autocompletion.sh ; sleep 3 ; bash ./install_autocompletion.sh ; sleep 3 ; rm ./install_autocompletion.sh ; sleep 3\"";
+    cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/install_autocompletion.sh ; sleep 3 ; bash ./install_autocompletion.sh ; sleep 3 ; rm ./install_autocompletion.sh ; sleep 3\"";
     LaunchSystemApp->execute(cmdScript);
     ui->DesinstallationAutocompletion->setEnabled(true);
     ui->DesinstallationAutocompletion->setStyleSheet("background-color: #38a3a5; color: #000");
@@ -100,7 +100,7 @@ void MainWindow::on_DesinstallationAutocompletion_clicked()
 {
     ui->DesinstallationAutocompletion->setEnabled(false);
     ui->DesinstallationAutocompletion->setStyleSheet("background-color: #aaa");
-    cmdScript = "konsole --nofork -e sudo bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/uninstall_autocompletion.sh ; sleep 3 ; bash ./uninstall_autocompletion.sh ; sleep 3 ; rm ./uninstall_autocompletion.sh ; rm -rf $HOME/.autocompletion ; sleep 3\"";
+    cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/uninstall_autocompletion.sh ; sleep 3 ; bash ./uninstall_autocompletion.sh ; sleep 3 ; rm ./uninstall_autocompletion.sh ; rm -rf $HOME/.autocompletion ; sleep 3\"";
     LaunchSystemApp->execute(cmdScript);
     ui->InstallationAutocompletion->setEnabled(true);
     ui->InstallationAutocompletion->setStyleSheet("background-color: #38a3a5; color: #000");
