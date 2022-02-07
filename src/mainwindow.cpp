@@ -120,7 +120,7 @@ void MainWindow::on_OuvrirDooSearch_clicked()
 
 void MainWindow::on_InstallationNoComprendo_clicked()
 {
-    cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"apt update ; apt install ../nocomprendo-without-qt-default.deb ; sleep 3\"";
+    cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"wget https://github.com/Heficience/HSuperMenu/raw/main/nocomprendo-without-qt-default.deb ; apt update ; apt install ./nocomprendo-without-qt-default.deb ; rm nocomprendo-without-qt-default.deb ; sleep 3\"";
     installApp(*ui->InstallationNoComprendo, *ui->DesinstallationNoComprendo, cmdScript,
                "background-color: #80ed99; color: #000");
 }
