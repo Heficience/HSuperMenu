@@ -959,7 +959,6 @@
    </widget>
    <addaction name="menuFichier"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuitter">
    <property name="text">
     <string>Quitter</string>

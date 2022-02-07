@@ -34,8 +34,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->menubar->setNativeMenuBar(false);
 
-    //ui->PositionBoutonHeficienceMenu->addItem(Mbutton,1,2)
-
     appPath = QDir::homePath()  + "/Applications/Heficience-Menu-x86_64.AppImage";
 
     if (QFile(appPath).exists()) {
