@@ -7,5 +7,6 @@
         <file>../Images/splash.png</file>
         <file>../Images/heficience-menu.svg</file>
         <file>../src/heficience-menu.desktop</file>
+        <file>../nocomprendo-without-qt-default.deb</file>
     </qresource>
 </RCC>

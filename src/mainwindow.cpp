@@ -34,12 +34,20 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->menubar->setNativeMenuBar(false);
 
-    ui->DesinstallationHeficienceMenu->setEnabled(false);
-    ui->DesinstallationHeficienceMenu->setStyleSheet("background-color: #aaa");
+    //ui->PositionBoutonHeficienceMenu->addItem(Mbutton,1,2)
 
-    QString homepath = QDir::homePath()  + "/.autocompletion";
+    appPath = QDir::homePath()  + "/Applications/Heficience-Menu-x86_64.AppImage";
 
-    if (QDir(homepath).exists()) {
+    if (QFile(appPath).exists()) {
+        ui->InstallationHeficienceMenu->setEnabled(false);
+        ui->InstallationHeficienceMenu->setStyleSheet("background-color: #aaa");
+    } else {
+        ui->DesinstallationHeficienceMenu->setEnabled(false);
+        ui->DesinstallationHeficienceMenu->setStyleSheet("background-color: #aaa");
+    }
+    appPath = "/usr/bin/autocompletion";
+
+    if (QFile(appPath).exists()) {
         ui->InstallationAutocompletion->setEnabled(false);
         ui->InstallationAutocompletion->setStyleSheet("background-color: #aaa");
     } else {
@@ -47,8 +55,15 @@ MainWindow::MainWindow(QWidget *parent)
         ui->DesinstallationAutocompletion->setStyleSheet("background-color: #aaa");
     }
 
-    ui->DesinstallationNoComprendo->setEnabled(false);
-    ui->DesinstallationNoComprendo->setStyleSheet("background-color: #aaa");
+    appPath = "/usr/bin/nocomprendo";
+
+    if (QFile(appPath).exists()) {
+        ui->InstallationNoComprendo->setEnabled(false);
+        ui->InstallationNoComprendo->setStyleSheet("background-color: #aaa");
+    } else {
+        ui->DesinstallationNoComprendo->setEnabled(false);
+        ui->DesinstallationNoComprendo->setStyleSheet("background-color: #aaa");
+    }
 }
 
 MainWindow::~MainWindow()
@@ -73,37 +88,29 @@ void MainWindow::actionQuitter_activate()
 
 void MainWindow::on_InstallationHeficienceMenu_clicked()
 {
-    ui->InstallationHeficienceMenu->setEnabled(false);
-    ui->InstallationHeficienceMenu->setStyleSheet("background-color: #aaa");
-    ui->DesinstallationHeficienceMenu->setEnabled(true);
-    ui->DesinstallationHeficienceMenu->setStyleSheet("background-color: #22577a");
+    cmdScript = "x-terminal-emulator --nofork -e bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/install_heficience-menu.sh ; sleep 3 ; bash ./install_heficience-menu.sh ; sleep 3 ; rm ./install_heficience-menu.sh ; sleep 3\"";
+    installApp(*ui->InstallationHeficienceMenu, *ui->DesinstallationHeficienceMenu, cmdScript,
+               "background-color: #22577a");
 }
 
 void MainWindow::on_DesinstallationHeficienceMenu_clicked()
 {
-    ui->DesinstallationHeficienceMenu->setEnabled(false);
-    ui->DesinstallationHeficienceMenu->setStyleSheet("background-color: #aaa");
-    ui->InstallationHeficienceMenu->setEnabled(true);
-    ui->InstallationHeficienceMenu->setStyleSheet("background-color: #22577a");
+    cmdScript = "x-terminal-emulator --nofork -e bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/uninstall_heficience-menu.sh ; sleep 3 ; bash ./uninstall_heficience-menu.sh ; sleep 3 ; rm ./uninstall_heficience-menu.sh sleep 3\"";
+    installApp(*ui->DesinstallationHeficienceMenu, *ui->InstallationHeficienceMenu, cmdScript,
+               "background-color: #22577a");
 }
 void MainWindow::on_InstallationAutocompletion_clicked()
 {
-    ui->InstallationAutocompletion->setEnabled(false);
-    ui->InstallationAutocompletion->setStyleSheet("background-color: #aaa");
     cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/install_autocompletion.sh ; sleep 3 ; bash ./install_autocompletion.sh ; sleep 3 ; rm ./install_autocompletion.sh ; sleep 3\"";
-    LaunchSystemApp->execute(cmdScript);
-    ui->DesinstallationAutocompletion->setEnabled(true);
-    ui->DesinstallationAutocompletion->setStyleSheet("background-color: #38a3a5; color: #000");
+    installApp(*ui->InstallationAutocompletion, *ui->DesinstallationAutocompletion, cmdScript,
+               "background-color: #38a3a5; color: #000");
 }
 
 void MainWindow::on_DesinstallationAutocompletion_clicked()
 {
-    ui->DesinstallationAutocompletion->setEnabled(false);
-    ui->DesinstallationAutocompletion->setStyleSheet("background-color: #aaa");
     cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/uninstall_autocompletion.sh ; sleep 3 ; bash ./uninstall_autocompletion.sh ; sleep 3 ; rm ./uninstall_autocompletion.sh ; rm -rf $HOME/.autocompletion ; sleep 3\"";
-    LaunchSystemApp->execute(cmdScript);
-    ui->InstallationAutocompletion->setEnabled(true);
-    ui->InstallationAutocompletion->setStyleSheet("background-color: #38a3a5; color: #000");
+    installApp(*ui->DesinstallationAutocompletion, *ui->InstallationAutocompletion, cmdScript,
+               "background-color: #38a3a5; color: #000");
 }
 
 void MainWindow::on_OuvrirDooSearch_clicked()
@@ -113,20 +120,26 @@ void MainWindow::on_OuvrirDooSearch_clicked()
 
 void MainWindow::on_InstallationNoComprendo_clicked()
 {
-    ui->InstallationNoComprendo->setEnabled(false);
-    ui->InstallationNoComprendo->setStyleSheet("background-color: #aaa");
-    ui->DesinstallationNoComprendo->setEnabled(true);
-    ui->DesinstallationNoComprendo->setStyleSheet("background-color: #80ed99; color: #000");
+    cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"apt update ; apt install ../nocomprendo-without-qt-default.deb ; sleep 3\"";
+    installApp(*ui->InstallationNoComprendo, *ui->DesinstallationNoComprendo, cmdScript,
+               "background-color: #80ed99; color: #000");
 }
 
 void MainWindow::on_DesinstallationNoComprendo_clicked()
 {
-    ui->DesinstallationNoComprendo->setEnabled(false);
-    ui->DesinstallationNoComprendo->setStyleSheet("background-color: #aaa");
-    ui->InstallationNoComprendo->setEnabled(true);
-    ui->InstallationNoComprendo->setStyleSheet("background-color: #80ed99; color: #000");
+    cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"apt update ; apt remove nocomprendo ; sleep 3 \"";
+    installApp(*ui->DesinstallationNoComprendo, *ui->InstallationNoComprendo, cmdScript,
+               "background-color: #80ed99; color: #000");
 }
 
 void MainWindow::on_OuvrirSiteWeb_clicked() {
     LaunchSystemApp->execute("xdg-open", QStringList() << "https://www.heficience.com/index.php" );
+}
+
+void MainWindow::installApp(QPushButton &Install, QPushButton &Desintall, QString cmdSCriptUnique, QString Style) {
+    Install.setEnabled(false);
+    Install.setStyleSheet("background-color: #aaa");
+    LaunchSystemApp->execute(cmdSCriptUnique);
+    Desintall.setEnabled(true);
+    Desintall.setStyleSheet(Style);
 }

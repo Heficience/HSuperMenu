@@ -28,19 +28,11 @@ public:
 
     QAction *actionQuitter;
     QAction *actionOptions;
-    QPushButton *InstallationHeficienceMenu;
-    QPushButton *DesinstallationHeficienceMenu;
-    QPushButton *InstallationAutocompletion;
-    QPushButton *DesinstallationAutocompletion;
-    QPushButton *OuvrirDooSearch;
-    QPushButton *InstallationNoComprendo;
-    QPushButton *DesinstallationNoComprendo;
-    QPushButton *OuvrirSiteWeb;
     QProcess *LaunchSystemApp;
     QString cmdScript;
-    QString pathCommandExec;
-    QString pathCommandRm;
+    QString appPath;
     static void handleStateChanged(QProcess *procss, QWidget *widget, QWidget *killtest);
+    void installApp(QPushButton &Install, QPushButton &Desintall, QString cmdSCriptUnique, QString Style);
 
 private:
     Ui::MainWindow *ui;
