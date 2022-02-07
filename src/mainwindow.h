@@ -33,6 +33,7 @@ public:
     QString appPath;
     static void handleStateChanged(QProcess *procss, QWidget *widget, QWidget *killtest);
     void installApp(QPushButton &Install, QPushButton &Desintall, QString cmdSCriptUnique, QString Style);
+    void initButton(QPushButton &Install, QPushButton &Desintall, QString appPath);
 
 private:
     Ui::MainWindow *ui;

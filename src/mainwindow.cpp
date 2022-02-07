@@ -30,43 +30,34 @@ MainWindow::MainWindow(QWidget *parent)
     actionOptions->setEnabled(false);
 
     actionQuitter = ui->menuFichier->addAction("Quitter");
-    connect(actionQuitter, SIGNAL(triggered()), this, SLOT(actionQuitter_activate()));
+    connect(actionQuitter, &QAction::triggered, this, &MainWindow::actionQuitter_activate);
 
     ui->menubar->setNativeMenuBar(false);
 
     appPath = QDir::homePath()  + "/Applications/Heficience-Menu-x86_64.AppImage";
+    initButton(*ui->InstallationHeficienceMenu,*ui->DesinstallationHeficienceMenu,appPath);
 
-    if (QFile(appPath).exists()) {
-        ui->InstallationHeficienceMenu->setEnabled(false);
-        ui->InstallationHeficienceMenu->setStyleSheet("background-color: #aaa");
-    } else {
-        ui->DesinstallationHeficienceMenu->setEnabled(false);
-        ui->DesinstallationHeficienceMenu->setStyleSheet("background-color: #aaa");
-    }
     appPath = "/usr/bin/autocompletion";
-
-    if (QFile(appPath).exists()) {
-        ui->InstallationAutocompletion->setEnabled(false);
-        ui->InstallationAutocompletion->setStyleSheet("background-color: #aaa");
-    } else {
-        ui->DesinstallationAutocompletion->setEnabled(false);
-        ui->DesinstallationAutocompletion->setStyleSheet("background-color: #aaa");
-    }
+    initButton(*ui->InstallationAutocompletion,*ui->DesinstallationAutocompletion,appPath);
 
     appPath = "/usr/bin/nocomprendo";
-
-    if (QFile(appPath).exists()) {
-        ui->InstallationNoComprendo->setEnabled(false);
-        ui->InstallationNoComprendo->setStyleSheet("background-color: #aaa");
-    } else {
-        ui->DesinstallationNoComprendo->setEnabled(false);
-        ui->DesinstallationNoComprendo->setStyleSheet("background-color: #aaa");
-    }
+    initButton(*ui->InstallationNoComprendo,*ui->DesinstallationNoComprendo,appPath);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::initButton(QPushButton &Install, QPushButton &Desintall, QString appPathHere)
+{
+    if (QFile(appPathHere).exists()) {
+        Install.setEnabled(false);
+        Install.setStyleSheet("background-color: #aaa");
+    } else {
+        Desintall.setEnabled(false);
+        Desintall.setStyleSheet("background-color: #aaa");
+    }
 }
 
 void MainWindow::handleStateChanged(QProcess *procss, QWidget *widget, QWidget *testkill)
