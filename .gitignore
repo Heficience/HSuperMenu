@@ -1,3 +1,13 @@
 .idea
 cmake-build-debug
 cmake-build-release
+/Linux/cmake_install.cmake
+/Linux/CMakeCache.txt
+/Linux/hsupermenu
+/Linux/hSuperMenu-4.20-x86_64.AppImage
+/Linux/install_manifest.txt
+/Linux/Makefile
+/Linux/hsupermenu_autogen/
+/Linux/CMakeFiles/
+/Linux/appimage-builder-cache/
+/Linux/AppDir/

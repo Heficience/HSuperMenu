@@ -90,14 +90,14 @@ void MainWindow::on_DesinstallationHeficienceMenu_clicked()
 }
 void MainWindow::on_InstallationAutocompletion_clicked()
 {
-    cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/install_autocompletion.sh ; sleep 3 ; bash ./install_autocompletion.sh ; sleep 3 ; rm ./install_autocompletion.sh ; sleep 3\"";
+    cmdScript = "x-terminal-emulator --nofork -e bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/install_autocompletion.sh ; sleep 3 ; bash ./install_autocompletion.sh ; sleep 3 ; rm ./install_autocompletion.sh ; sleep 3\"";
     installApp(*ui->InstallationAutocompletion, *ui->DesinstallationAutocompletion, cmdScript,
                "background-color: #38a3a5; color: #000");
 }
 
 void MainWindow::on_DesinstallationAutocompletion_clicked()
 {
-    cmdScript = "x-terminal-emulator --nofork -e sudo bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/uninstall_autocompletion.sh ; sleep 3 ; bash ./uninstall_autocompletion.sh ; sleep 3 ; rm ./uninstall_autocompletion.sh ; rm -rf $HOME/.autocompletion ; sleep 3\"";
+    cmdScript = "x-terminal-emulator --nofork -e bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/uninstall_autocompletion.sh ; sleep 3 ; bash ./uninstall_autocompletion.sh ; sleep 3 ; rm ./uninstall_autocompletion.sh ; rm -rf $HOME/.autocompletion ; sleep 3\"";
     installApp(*ui->DesinstallationAutocompletion, *ui->InstallationAutocompletion, cmdScript,
                "background-color: #38a3a5; color: #000");
 }

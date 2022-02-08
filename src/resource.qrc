@@ -6,7 +6,7 @@
         <file>../Images/Heficience_Icone.icns</file>
         <file>../Images/splash.png</file>
         <file>../Images/heficience-menu.svg</file>
-        <file>../src/heficience-menu.desktop</file>
+        <file>../src/hsupermenu.desktop</file>
         <file>../nocomprendo-without-qt-default.deb</file>
     </qresource>
 </RCC>
