@@ -60,16 +60,6 @@ void MainWindow::initButton(QPushButton &Install, QPushButton &Desintall, QStrin
     }
 }
 
-void MainWindow::handleStateChanged(QProcess *procss, QWidget *widget, QWidget *testkill)
-{
-    if (procss->state() == QProcess::NotRunning)
-    {
-        widget->close();
-        qApp->closeAllWindows();
-        testkill->close();
-    }
-}
-
 void MainWindow::actionQuitter_activate()
 {
     qApp->quit();
