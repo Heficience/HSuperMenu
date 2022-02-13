@@ -2,8 +2,12 @@
 <RCC>
     <qresource prefix="/">
         <file>../Images/Heficience_Icone.svg</file>
-        <file>../Images/Heficience_Icone.ico</file>
-        <file>../Images/Heficience_Icone.icns</file>
+        <file>../Images/HeficienceMenu_Icone.svg</file>
+        <file>../Images/DooSearch_Icone.svg</file>
+        <file>../Images/Autocompletion_Icone.svg</file>
+        <file>../Images/NoComprendo_Icone.svg</file>
+        <file>../Images/SiteWebHeficience_Icone.svg</file>
+        <file>../Images/AVenir_Icone.svg</file>
         <file>../Images/splash.png</file>
         <file>../Images/heficience-menu.svg</file>
         <file>../src/hsupermenu.desktop</file>

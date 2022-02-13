@@ -52,7 +52,7 @@
              <string notr="true">background-color: #57cc99; color: #000</string>
             </property>
             <property name="text">
-             <string>DooSearch</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/DooSearch_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;DooSearch&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -134,7 +134,7 @@
              <string notr="true">background-color: #38a3a5; color: #000</string>
             </property>
             <property name="text">
-             <string>Autocompletion</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/Autocompletion_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;Autocompletion&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -250,7 +250,7 @@
              <string notr="true">background-color: #22577a; color: #666</string>
             </property>
             <property name="text">
-             <string>À venir ...</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/AVenir_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;À venir ...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -368,8 +368,17 @@
             <property name="styleSheet">
              <string notr="true">background-color: #22577a</string>
             </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
             <property name="text">
-             <string>Heficience Menu</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/HeficienceMenu_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;Heficience Menu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::AutoText</enum>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -485,7 +494,7 @@
              <string notr="true">background-color: #c7f9cc; color: #000</string>
             </property>
             <property name="text">
-             <string>Site Web d'Heficience</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/SiteWebHeficience_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;Site Web d'Heficience&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -499,7 +508,7 @@
            </widget>
           </item>
           <item>
-           <layout class="QGridLayout" name="PositionBoutonSiteWeb" rowstretch="0,0,0">
+           <layout class="QGridLayout" name="PositionBoutonSiteWeb" rowstretch="0">
             <property name="sizeConstraint">
              <enum>QLayout::SetNoConstraint</enum>
             </property>
@@ -570,7 +579,7 @@
              <string notr="true">background-color: #80ed99; color: #000</string>
             </property>
             <property name="text">
-             <string>NoComprendo</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/NoComprendo_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;NoComprendo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -686,7 +695,7 @@
              <string notr="true">background-color: #38a3a5; color: #aaa</string>
             </property>
             <property name="text">
-             <string>À venir ...</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/AVenir_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;À venir ...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -722,7 +731,7 @@
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: #aaa</string>
+               <string notr="true">background-color: #aaa; color: #666</string>
               </property>
               <property name="text">
                <string>Désinstallation</string>
@@ -756,7 +765,7 @@
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: #aaa</string>
+               <string notr="true">background-color: #aaa; color: #666</string>
               </property>
               <property name="text">
                <string>Installation</string>
@@ -808,7 +817,7 @@
              <string notr="true">background-color: #57cc99; color: #aaa</string>
             </property>
             <property name="text">
-             <string>À venir ...</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/AVenir_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;À venir ...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -844,7 +853,7 @@
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: #aaa</string>
+               <string notr="true">background-color: #aaa; color: #666</string>
               </property>
               <property name="text">
                <string>Désinstallation</string>
@@ -878,7 +887,7 @@
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: #aaa</string>
+               <string notr="true">background-color: #aaa; color: #666</string>
               </property>
               <property name="text">
                <string>Installation</string>
@@ -930,7 +939,7 @@
              <string notr="true">background-color: #80ed99; color: #aaa</string>
             </property>
             <property name="text">
-             <string>À venir ...</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Images/AVenir_Icone.svg&quot; width=&quot;150&quot;/&gt;&lt;br&gt;À venir ...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -966,7 +975,7 @@
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: #aaa</string>
+               <string notr="true">background-color: #aaa; color: #666</string>
               </property>
               <property name="text">
                <string>Désinstallation</string>
@@ -1000,7 +1009,7 @@
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: #aaa</string>
+               <string notr="true">background-color: #aaa; color: #666</string>
               </property>
               <property name="text">
                <string>Installation</string>
@@ -1051,6 +1060,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

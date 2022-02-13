@@ -37,6 +37,7 @@ AppDir:
       - sourceline: deb http://security.ubuntu.com/ubuntu impish-security multiverse
     include:
       - libqt5widgets5
+      - libqt5svg5
     exclude: []
   files:
     include: []
