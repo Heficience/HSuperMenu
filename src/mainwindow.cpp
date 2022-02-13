@@ -8,6 +8,7 @@
 #include <map>
 #include <QGuiApplication>
 #include <QObject>
+#include <QPalette>
 
 std::map<std::string, QString> QStringMap;
 
@@ -53,10 +54,10 @@ void MainWindow::initButton(QPushButton &Install, QPushButton &Desintall, QStrin
 {
     if (QFile(appPathHere).exists()) {
         Install.setEnabled(false);
-        Install.setStyleSheet("background-color: #aaa");
+        Install.setStyleSheet("background-color: #aaa; color:#777;");
     } else {
         Desintall.setEnabled(false);
-        Desintall.setStyleSheet("background-color: #aaa");
+        Desintall.setStyleSheet("background-color: #aaa; color:#777;");
     }
 }
 
