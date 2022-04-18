@@ -83,7 +83,18 @@ void MainWindow::on_InstallationHeficienceMenu_clicked()
 #ifdef __linux__
     cmdScript = "x-terminal-emulator --nofork -e bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/install_heficience-menu.sh ; sleep 3 ; bash ./install_heficience-menu.sh ; sleep 3 ; rm ./install_heficience-menu.sh ; sleep 3\"";
 #elif _WIN32
-    cmdScript = "Start PowerShell \"Write-Output \'Récupération de la dernière version du logiciel\'; Start-Sleep -s 5 ; Invoke-WebRequest -Uri 'https://github.com/Heficience/Heficience-menu/releases/download/4.20/Windows-Heficience-Menu-4.20.exe' -OutFile '.\\Windows-Heficience-Menu-4.20.exe'; Write-Output \'Installation de la dernière version du logiciel\'; Start-Sleep -s 5 ; Start-Process Windows-Heficience-Menu-4.20.exe -Wait; Write-Output \'Suppression du fichier téléchargé\'; Start-Sleep -s 5 ; cmd /c 'del /f Windows-Heficience-Menu-4.20.exe'\"";
+    cmdScript = "Start PowerShell \
+                \"Write-Output \'Récupération de la dernière version du logiciel\'; \
+                Start-Sleep -s 2 ; \
+                Invoke-WebRequest \
+                -Uri 'https://github.com/Heficience/Heficience-menu/releases/download/4.20/Windows-Heficience-Menu-4.20.exe' \
+                -OutFile '.\\Windows-Heficience-Menu-4.20.exe'; \
+                Write-Output \'Installation de la dernière version du logiciel\' ; \
+                Start-Sleep -s 3 ; \
+                Start-Process Windows-Heficience-Menu-4.20.exe -Wait; \
+                Write-Output \'Suppression du fichier téléchargé\'; \
+                Start-Sleep -s 2 ; \
+                cmd /c 'del /f Windows-Heficience-Menu-4.20.exe' \" ";
 #elif __APPLE__
     cmdScript = "";
 #endif
@@ -96,7 +107,12 @@ void MainWindow::on_DesinstallationHeficienceMenu_clicked()
 #ifdef __linux__
     cmdScript = "x-terminal-emulator --nofork -e bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/uninstall_heficience-menu.sh ; sleep 3 ; bash ./uninstall_heficience-menu.sh ; sleep 3 ; rm ./uninstall_heficience-menu.sh sleep 3\"";
 #elif _WIN32
-    cmdScript = "Start PowerShell \" Write-Output \'Désinstallation du logiciel\'; Start-Sleep -s 5 ; Get-Package -Name \'Heficience Menu\' | Uninstall-Package ;  Write-Output \'Désinstallation effectuée\'; Start-Sleep -s 5;\"";
+    cmdScript = "Start PowerShell \
+                \"Write-Output \'Désinstallation du logiciel\'; \
+                Start-Sleep -s 2 ; \
+                Get-Package -Name \'Heficience Menu\' | Uninstall-Package ; \
+                Write-Output \'Désinstallation effectuée\' ; \
+                Start-Sleep -s 5; \" ";
 #elif __APPLE__
     cmdScript = "";
 #endif
@@ -108,7 +124,15 @@ void MainWindow::on_InstallationAutocompletion_clicked()
 #ifdef __linux__
     cmdScript = "x-terminal-emulator --nofork -e bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/install_autocompletion.sh ; sleep 3 ; bash ./install_autocompletion.sh ; sleep 3 ; rm ./install_autocompletion.sh ; sleep 3\"";
 #elif _WIN32
-    cmdScript = "Start PowerShell \"Write-Output \'Récupération de la dernière version du logiciel\'; Start-Sleep -s 5 ; Invoke-WebRequest -Uri 'https://github.com/Heficience/autocompletion/releases/download/0.1.0-dev.1/autocompletion_windows.exe' -OutFile '.\\autocompletion_windows.exe' ; Write-Output \'Installation de la dernière version du logiciel\'; Start-Sleep -s 5 ; Start-Process autocompletion_windows.exe\"";
+    cmdScript = "Start PowerShell \
+                \"Write-Output \'Récupération de la dernière version du logiciel\'; \
+                Start-Sleep -s 5 ; \
+                Invoke-WebRequest \
+                -Uri 'https://github.com/Heficience/autocompletion/releases/download/0.1.0-dev.1/autocompletion_windows.exe' \
+                -OutFile '.\\autocompletion_windows.exe' ; \
+                Write-Output \'Installation de la dernière version du logiciel\'; \
+                Start-Sleep -s 5 ; \
+                Start-Process autocompletion_windows.exe \" ";
 #elif __APPLE__
     cmdScript = "";
 #endif
@@ -121,7 +145,12 @@ void MainWindow::on_DesinstallationAutocompletion_clicked()
 #ifdef __linux__
     cmdScript = "x-terminal-emulator --nofork -e bash -c \"wget https://github.com/Heficience/heficience-scripts/raw/main/linux/uninstall_autocompletion.sh ; sleep 3 ; bash ./uninstall_autocompletion.sh ; sleep 3 ; rm ./uninstall_autocompletion.sh ; rm -rf $HOME/.autocompletion ; sleep 3\"";
 #elif _WIN32
-    cmdScript = "Start PowerShell \"Write-Output \'Désinstallation du logiciel\'; Start-Sleep -s 5 ; cmd /c 'del /f autocompletion_windows.exe' ;  Write-Output \'Désinstallation effectuée\'; Start-Sleep -s 5;\"";
+    cmdScript = "Start PowerShell \
+                \"Write-Output \'Désinstallation du logiciel\'; \
+                Start-Sleep -s 5 ; \
+                cmd /c 'del /f autocompletion_windows.exe' ; \
+                Write-Output \'Désinstallation effectuée\'; \
+                Start-Sleep -s 5;\"";
 #elif __APPLE__
     cmdScript = "";
 #endif
